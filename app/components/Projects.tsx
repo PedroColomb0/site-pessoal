@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useLanguage } from "../LanguageContext"
-import { motion } from "framer-motion"
+import { useLanguage } from "../LanguageContext";
+import { motion } from "framer-motion";
 
 const Projects = () => {
-  const { language } = useLanguage()
+  const { language } = useLanguage();
 
   const content = {
     en: {
@@ -62,13 +62,13 @@ const Projects = () => {
         },
       ],
     },
-  }
+  };
 
   return (
-    <section id="projects" className="py-20 bg-gray-100">
+    <section id="projects" className="py-20 bg-[#e4ebf0]">
       <div className="container mx-auto px-6">
         <motion.h2
-          className="text-3xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-12 text-[#27548c]"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -79,20 +79,20 @@ const Projects = () => {
           {content[language].projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-[#8ab3cf] transform hover:scale-105 transition-transform duration-300"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-[#27548c]">{project.title}</h3>
+                <p className="text-[#4180ab] mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      className="bg-[#8ab3cf] text-white text-xs font-semibold px-2.5 py-0.5 rounded"
                     >
                       {tag}
                     </span>
@@ -100,7 +100,7 @@ const Projects = () => {
                 </div>
                 <a
                   href={project.link}
-                  className="text-blue-500 hover:text-blue-600 font-semibold"
+                  className="text-[#27548c] hover:text-[#4180ab] font-semibold"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -112,7 +112,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

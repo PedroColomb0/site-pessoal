@@ -20,11 +20,11 @@ const Header = () => {
   ]
 
   return (
-    <header className="bg-gray-800 text-white">
+    <header className="bg-[#27548c] text-white">
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-xl font-bold">
-            Your Name
+            PecS
           </Link>
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
